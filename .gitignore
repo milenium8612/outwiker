@@ -52,5 +52,5 @@ serverinfo.py
 *.retry
 *.log
 .vscode
-Pipfile.lock
+# Pipfile.lock
 .pytest_cache
