@@ -1,12 +1,12 @@
 version: 3.0.0.xxx.{build}
 image:
     # - Visual Studio 2017
-    - Previous Ubuntu1604
+    - Ubuntu1804
 environment:
     PY_PYTHON: 3.6-32
     PYTHONIOENCODING: utf_8
     PIPENV_IGNORE_VIRTUALENVS: 1
-stack: Python 3.5.5
+stack: Python 3.6
 init:
     - cmd: py -m pip install pipenv
     - sh: sudo apt-get -y update
@@ -22,10 +22,10 @@ install:
 build_script:
     - cmd: py -m pipenv run fab test:"test/actions -s"
     - cmd: py -m pipenv run fab win
-    - sh: pipenv run fab linux_binary
-    - sh: pipenv run fab linux_appimage
-    - sh: pipenv run fab deb_binary
-    - sh: pipenv run fab plugins
+    # - sh: pipenv run fab linux_binary
+    # - sh: pipenv run fab linux_appimage
+    # - sh: pipenv run fab deb_binary
+    # - sh: pipenv run fab plugins
 test_script:
     - cmd: py -m pipenv run fab test
     - cmd: py -m pipenv run fab coverage
