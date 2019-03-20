@@ -30,7 +30,7 @@ build_script:
 test_script:
     - cmd: py -m pipenv run fab test
     - cmd: py -m pipenv run fab coverage
-    - sh: pipenv run fab test:"test/core -s"
+    - sh: xvfb-run pipenv run fab test:"test/core -s -v"
 artifacts:
     - path: build/*/versions.xml
       name: versions.xml
